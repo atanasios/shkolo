@@ -13,6 +13,6 @@ header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 Route::middleware([CorsMiddleware::class])->group(function () {
-    Route::get('/item', [ItemController::class, 'index']);
-    Route::post('/item', [ItemController::class, 'upload']);
+    Route::get('/api/item', [ItemController::class, 'index']);
+    Route::post('/api/item', [ItemController::class, 'upload']);
 });

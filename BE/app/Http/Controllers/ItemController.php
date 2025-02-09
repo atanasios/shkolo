@@ -25,9 +25,10 @@ class ItemController extends Controller
 
     public function upload(Request $request) {
         $validate = Validator::make($request->all(), [
+            'id' => 'required',
             'title' => 'required',
             'url' => 'required',
-            'color' => 'required',
+            'color' => 'required | string' ,
         ]);
     
         if ($validate->fails()) {
@@ -38,6 +39,7 @@ class ItemController extends Controller
             return response()->json($data, 422);
         } else {
             $item = new Item;
+            $item->id = $request->id;
             $item->title = $request->title;
             $item->url = $request->url;
             $item->color = $request->color;

@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Boxes />} />
-        <Route path='/form' element={<Form />} />
+        <Route path='/:id' element={<Form />} />
       </Routes>
     </Router>
   );
